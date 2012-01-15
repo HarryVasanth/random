@@ -2,7 +2,7 @@
 
 [![🎲 Random Choice](https://github.com/HarryVasanth/random/actions/workflows/run.yml/badge.svg)](https://github.com/HarryVasanth/random/actions/workflows/run.yml)
 
-This is a simple Bash script that does a random task and displays the corresponding output using ASCII art.
+A collection of simple scripts that accomplishes a random task and displays the corresponding output as ASCII art.
 
 Currently available tasks:
 
