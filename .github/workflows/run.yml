@@ -1,0 +1,26 @@
+name: 🎲 Random Choice
+on:
+  workflow_dispatch:
+    inputs:
+      action:
+        description: 'Select an option'
+        required: true
+        default: 'Pick a Card from Deck'
+        options:
+          - 'Pick a Card from Deck'
+          - 'Roll a Die'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 🎲 Executing your choice
+        run: |
+          if [[ "${{ github.event.inputs.action }}" == 'Pick a Card from Deck' ]]; then
+            ./deck/µcard.sh
+          elif [[ "${{ github.event.inputs.action }}" == 'Roll a Die' ]]; then
+            ./dice/µroll.sh
+          else
+            echo "Invalid option selected"
+            exit 1
+          fi
