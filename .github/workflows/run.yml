@@ -4,10 +4,10 @@ on:
     inputs:
       random-choice:
         type: choice
-        description: Whats your choice?
+        description: What is your choice?
         options: 
-        - Pick a Card
-        - Roll a Die
+        - 🃏 Pick a Card
+        - 🎲 Roll a Die
 
 jobs:
   run:
@@ -16,13 +16,13 @@ jobs:
     steps:
     
       - name: ⬇ Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         
       - name: ⚙️ Executing
         run: |
-          if [[ "${{ github.event.inputs.random-choice }}" == 'Pick a Card' ]]; then
+          if [[ "${{ github.event.inputs.random-choice }}" == '🃏 Pick a Card' ]]; then
             ./deck/µcard.sh
-          elif [[ "${{ github.event.inputs.random-choice }}" == 'Roll a Die' ]]; then
+          elif [[ "${{ github.event.inputs.random-choice }}" == '🎲 Roll a Die' ]]; then
             ./dice/µroll.sh
           else
             echo "Invalid option selected"
