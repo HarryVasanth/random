@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
+set -euo pipefail
 d=("+-------+\n|       |\n|   o   |\n|       |\n+-------+" "+-------+\n| o     |\n|       |\n|     o |\n+-------+" "+-------+\n| o     |\n|   o   |\n|     o |\n+-------+" "+-------+\n| o   o |\n|       |\n| o   o |\n+-------+" "+-------+\n| o   o |\n|   o   |\n| o   o |\n+-------+" "+-------+\n| o o o |\n|       |\n| o o o |\n+-------+")
-r=$((RANDOM % 6))
-echo -e "${d[$r]}"
+printf '%b\n' "${d[RANDOM * ${#d[@]} / 32768]}"

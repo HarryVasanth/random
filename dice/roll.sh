@@ -1,6 +1,7 @@
-#!/bin/bash
+#!/usr/bin/env bash
+set -euo pipefail
 
-# Array storing the dice faces
+# Faces are ordered 1-6, so index i holds the face for roll i + 1.
 dice_faces=(
     "+-------+
 |       |
@@ -34,6 +35,4 @@ dice_faces=(
 +-------+"
 )
 
-# Roll the dice and display the result
-roll=$((RANDOM % 6))
-echo "${dice_faces[$roll]}"
+printf '%s\n' "${dice_faces[RANDOM * ${#dice_faces[@]} / 32768]}"
