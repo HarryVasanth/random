@@ -2,7 +2,7 @@ name: 🎲 Random Choice
 on:
   workflow_dispatch:
     inputs:
-      name:
+      random-choice:
         type: choice
         description: Whats your choice?
         options: 
@@ -19,9 +19,9 @@ jobs:
         
       - name: 🎲 Executing your choice
         run: |
-          if [[ "${{ github.event.inputs.action }}" == 'Pick a Card' ]]; then
+          if [[ "${{ github.event.inputs.random-choice }}" == 'Pick a Card' ]]; then
             ./deck/µcard.sh
-          elif [[ "${{ github.event.inputs.action }}" == 'Roll a Die' ]]; then
+          elif [[ "${{ github.event.inputs.random-choice }}" == 'Roll a Die' ]]; then
             ./dice/µroll.sh
           else
             echo "Invalid option selected"
